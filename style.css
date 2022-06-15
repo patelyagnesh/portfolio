@@ -36,12 +36,12 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .work, .contact, footer{
+.about, .skill, .education, .work, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
-.services .serv-content,
-.skills .skills-content,
+.skill .skill-content,
+.education .education-content,
 .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
@@ -260,69 +260,73 @@ section .title::after{
     background: none;
 }
 
-/* services section styling */
-.services, .work{
+/* skill section styling */
+.skill, .work{
     color:#fff;
     background: #111;
 }
-.services .title::before,
+.skill .title::before,
 .work .title::before{
     background: #fff;
 }
-.services .title::after,
+.skill .title::after,
 .work .title::after{
     background: #111;
-    content: "What I Provide";
+    content: "What I Know";
 }
-.services .serv-content .card{
+.skill .skill-content .card{
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
+    margin-bottom: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.services .serv-content .card:hover{
+.skill .skill-content .card:hover{
     background: crimson;
 }
-.services .serv-content .card .box{
+.skill .skill-content .card .box{
     transition: all 0.3s ease;
 }
-.services .serv-content .card:hover .box{
+.skill .skill-content .card:hover .box{
     transform: scale(1.05);
 }
-.services .serv-content .card i{
+.skill .skill-content .card i, .skill-content .text{
     font-size: 50px;
     color: crimson;
     transition: color 0.3s ease;
 }
-.services .serv-content .card:hover i{
+.skill .skill-content .card:hover i{
     color: #fff;
 }
-.services .serv-content .card .text{
+.skill-content .card:hover .text{
+    color: #111;
+}
+.skill .skill-content .card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
 
-/* skills section styling */
+/* education section styling */
 
-.skills .title::after{
+.education .title::after{
     content: "What I Know";
 }
-.skills .skills-content .column{
+.education .education-content .column{
     width: calc(50% - 30px);
 }
-.skills .skills-content .left .text{
+.education .education-content .left .text{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-.skills .skills-content .left p{
+.education .education-content .left p{
     text-align: justify;
 }
-.skills .skills-content .left a{
+.education .education-content .left a{
     display: inline-block;
     background: crimson;
     color: #fff;
@@ -334,30 +338,30 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
-.skills .skills-content .left a:hover{
+.education .education-content .left a:hover{
     color: crimson;
     background: none;
 }
-.skills .skills-content .right .bars{
+.education .education-content .right .bars{
     margin-bottom: 15px;
 }
-.skills .skills-content .right .info{
+.education .education-content .right .info{
     display: flex;
     margin-bottom: 5px;
     align-items: center;
     justify-content: space-between;
 }
-.skills .skills-content .right span{
+.education .education-content .right span{
     font-weight: 500;
     font-size: 18px;
 }
-.skills .skills-content .right .line{
+.education .education-content .right .line{
     height: 5px;
     width: 100%;
     background: lightgrey;
     position: relative;
 }
-.skills .skills-content .right .line::before{
+.education .education-content .right .line::before{
     content: "";
     position: absolute;
     height: 100%;
@@ -365,19 +369,19 @@ section .title::after{
     top: 0;
     background: crimson;
 }
-.skills-content .right .html::before{
+.education-content .right .html::before{
     width: 90%;
 }
-.skills-content .right .css::before{
+.education-content .right .css::before{
     width: 60%;
 }
-.skills-content .right .js::before{
+.education-content .right .js::before{
     width: 80%;
 }
-.skills-content .right .php::before{
+.education-content .right .php::before{
     width: 50%;
 }
-.skills-content .right .mysql::before{
+.education-content .right .mysql::before{
     width: 70%;
 }
 
@@ -396,6 +400,22 @@ section .title::after{
 .work .carousel .card:hover{
     background: crimson;
 }
+.work .carousel a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.work .carousel a:hover{
+    text-decoration: underline #fff;
+}
+
 .work .carousel .card .box{
     display: flex;
     flex-direction: column;
@@ -410,6 +430,9 @@ section .title::after{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
+}
+.work .carousel .card p{
+    text-align: justify;
 }
 .work .carousel .card img{
     height: 150px;
@@ -626,11 +649,11 @@ footer .right {
     .about .about-content .right{
         flex: 100%;
     }
-    .services .serv-content .card{
+    .services .skill-content .card{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
-    .skills .skills-content .column,
+    .education .education-content .column,
     .contact .contact-content .column{
         width: 100%;
         margin-bottom: 35px;
@@ -650,7 +673,7 @@ footer .right {
     .home .home-content a{
         font-size: 20px;
     }
-    .services .serv-content .card{
+    .services .skill-content .card{
         width: 100%;
     }
 }
@@ -663,7 +686,7 @@ footer .right {
         font-size: 27px;
     }
     .about .about-content .right .text,
-    .skills .skills-content .left .text{
+    .education .education-content .left .text{
         font-size: 19px;
     }
     .contact .right form .fields{
