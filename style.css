@@ -315,74 +315,63 @@ section .title::after{
 .education .title::after{
     content: "What I Know";
 }
-.education .education-content .column{
-    width: calc(50% - 30px);
-}
-.education .education-content .left .text{
+.education .column .text{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-.education .education-content .left p{
-    text-align: justify;
+.education .row{ 
+    content: "";
+    display: table;
+    clear: both;
 }
-.education .education-content .left a{
-    display: inline-block;
-    background: crimson;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 16px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid crimson;
-    transition: all 0.3s ease;
+.education .row .column{
+    flex:1 1 40rem;
+    margin:1rem;
+    padding:2rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    width: calc(50% - 30px);
+    float: left;
+    width: 47%;
+    height: 700px;
 }
-.education .education-content .left a:hover{
-    color: crimson;
-    background: none;
+.education .row .column .heading{
+    color:crimson;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
 }
-.education .education-content .right .bars{
-    margin-bottom: 15px;
-}
-.education .education-content .right .info{
-    display: flex;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
-}
-.education .education-content .right span{
-    font-weight: 500;
-    font-size: 18px;
-}
-.education .education-content .right .line{
-    height: 5px;
-    width: 100%;
-    background: lightgrey;
+.education .row .column .box{
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
+    border-left: .2rem solid crimson;
     position: relative;
 }
-.education .education-content .right .line::before{
-    content: "";
+.education .row .column .box::before{
+    content: '';
     position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: crimson;
+    top:.1rem; left: -1.1rem;
+    height:2rem;
+    width:2rem;
+    border-radius: 50%;
+    background:crimson;
 }
-.education-content .right .html::before{
-    width: 90%;
+.education .row .column .box .year{
+    font-size: 20px;
+    color:#999;
+    padding-bottom: .5rem;
 }
-.education-content .right .css::before{
-    width: 60%;
+.education .row .column .box .year i{
+    padding-right: .5rem;
 }
-.education-content .right .js::before{
-    width: 80%;
+.education .row .column .box h3{
+    color:#333;
+    font-size: 1rem;
 }
-.education-content .right .php::before{
-    width: 50%;
-}
-.education-content .right .mysql::before{
-    width: 70%;
+.education .row .column .box p, li{
+    color:#666;
+    text-align: justify;
 }
 
 /* work section styling */
